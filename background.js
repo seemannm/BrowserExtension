@@ -166,6 +166,10 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
       else if (urlPartAfterIp.startsWith('umc') && (tabs[0].title === 'User Management Control' || tabs[0].title === 'User Management Component')) {
         appType = -1; //UMC
       }
+      //added, AutoLogin WebClient UCP
+      else if (urlPartAfterIp.startsWith('device') && tabs[0].title === 'WinCC Unified RT')   {
+         appType = 1; //UCP Web client
+      }
       console.log(urlPartAfterIp);
       console.log(tabs[0].title);
       if (appType > 0) {
